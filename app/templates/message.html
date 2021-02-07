@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Redacted data: {{ card_number }} {{ exp_date }} {{ cvv }}</h1>
+<form method="post" action="/forward">
+    <input value={{ card_alias }} type="text" name="card_number">
+    <input value={{ exp_alias }} type="text" name="exp_date">
+    <input value={{ cvv_alias }} type="text" name="cvv">
+    <button type="submit">Reveal data</button>
+</form>
+{% endblock %}
